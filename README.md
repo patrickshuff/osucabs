@@ -45,3 +45,10 @@ sudo service httpd start
 
 
 
+Troubleshooting
+---------------
+
+## The times are way way off?  what's up?
+Well the problem is likely your server is in a different timezone.  Make sure your server is set up to use eastern time zone
+
+sudo cp /usr/share/zoneinfo/US/Eastern /etc/localtime
