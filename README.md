@@ -1,5 +1,10 @@
 osucabs
 =======
+Introduction
+------------
+This site is for the Ohio State Campus Area Bus Service.  
+
+This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  
 
 Installation
 ------------
