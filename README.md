@@ -8,6 +8,22 @@ Word of warning: This was one of first big python projects so I'm sure the code 
 
 This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  I have tested deploying to a clean Amazon EC2 Amazon AMI Linux instance several time.  Feel free to get a hold of me if you have any issues!
 
+Requirements
+------------
+### Required Packages (rpm distro)
+httpd
+mod_wsgi
+python-setuptools
+python-devel		# Required for lxml (can be removed after lxml install)
+gcc			# Required for lxml (can be removed after lxml install) 
+libxslt-devel		# Required for lxml (can be removed after lxml install)
+mongo18-10gen-server	# MongoDB Server
+
+### Required Python modules
+web.py
+lxml
+pymongo 
+
 Installation
 ------------
 ### Add the 10gen Mondo DB repo 
@@ -22,7 +38,7 @@ Installation
     
 ### You need to have git to clone our repo, and apache to execute
     sudo yum install -y git httpd mod_wsgi python-setuptools python-devel gcc libxslt-devel mongo18-10gen-server
-    sudo easy_install web.py lxml pymongo
+    sudo easy_install web.py lxml pymongo 
 NOTE: I don't like the fact that we have to install gcc...but it is needed for lxml. 
 
 ### Here is where I put the directory.  This should be changed to /var/www/
