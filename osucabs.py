@@ -1,4 +1,10 @@
 #!/bin/env python
+
+
+# This is not good form, this should probably be done in the apache config
+import site, sys
+site.addsitedir('/webdata/osucabs')
+
 from math import *
 import bustime, web, json
 from pymongo import Connection
@@ -12,8 +18,6 @@ stopsdb = db["%sstops" % DBNAME]
 
 # This is not good form, this should probably be done in the apache config
 
-import sys
-sys.path.append('/webdata/osucabs')
 try:
     import settings
 except ImportError:
