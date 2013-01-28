@@ -25,7 +25,8 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
 
 ### Here is where I put the directory.  This should be changed to /var/www/
     sudo mkdir /webdata
-    sudo chmod -R 755 /webdata
+    sudo chmod 755 /webdata
+    sudo chmod 755 /webdata/osucabs
     cd /webdata/
     
 ### Pull down the latest git repo
