@@ -33,7 +33,12 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
     
 ### Copy our apache configuration into place
     sudo cp /webdata/osucabs/osucabs_apache.conf /etc/httpd/conf.d/osucabs.conf
-    
+
+# Configuration (Apply for your API key and update settings.py!)
+
+### You must apply for a developer API key before using
+    sudo cp  /webdata/osucabs/sample_settings.py  /webdata/osucabs/settings.py
+    sudo vim /webdata/osucabs/settings.py
 # Run it!
 
 ### Make sure MongoDB is enable on reboot
@@ -47,7 +52,7 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
     
 ### Start the apache process
     sudo service httpd start
-    
+
 
 
 Troubleshooting
