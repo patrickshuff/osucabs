@@ -21,7 +21,7 @@ Installation
 ### You need to have git to clone our repo, and apache to execute
     sudo yum install -y git httpd mod_wsgi python-setuptools python-devel gcc libxslt-devel mongo18-10gen-server
     sudo easy_install web.py lxml pymongo
-    NOTE: I don't like the fact that we have to install gcc...but it is needed for lxml. 
+NOTE: I don't like the fact that we have to install gcc...but it is needed for lxml. 
 
 ### Here is where I put the directory.  This should be changed to /var/www/
     sudo mkdir /webdata
