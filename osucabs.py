@@ -21,8 +21,8 @@ stopsdb = db["%sstops" % DBNAME]
 try:
     import settings
 except ImportError:
-    print "You must edit settings.py and add your api key"
-    sys.exit(1)
+    sys.exit("You must edit settings.py and add your api key!  Please do this!")
+
 
 # User defined stuff
 baseurl = 'http://trip.osu.edu/bustime/api/v1/'
