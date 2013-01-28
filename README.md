@@ -25,7 +25,7 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
 
 ### Here is where I put the directory.  This should be changed to /var/www/
     sudo mkdir /webdata
-    sudo chown -R 755 /webdata
+    sudo chmod -R 755 /webdata
     cd /webdata/
     
 ### Pull down the latest git repo
@@ -43,7 +43,7 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
     sudo service mongod start
     
 ### Make sure apache starts on boot
-    sudo chkconfig mongod on
+    sudo chkconfig httpd on
     
 ### Start the apache process
     sudo service httpd start
@@ -52,8 +52,12 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
 
 Troubleshooting
 ---------------
+The first place you should probably start (assuming you have apache in installed, and the config in place) is looking at the apache error_log:
 
-### The times are way way off?  what's up?
+sudo less /var/log/httpd/error_log
+
+### The bus times on the webpage are way way off?  what's up?
 Well the problem is likely your server is in a different timezone.  Make sure your server is set up to use eastern time zone
 
     sudo cp /usr/share/zoneinfo/US/Eastern /etc/localtime
+
