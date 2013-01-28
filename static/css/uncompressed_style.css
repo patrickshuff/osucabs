@@ -1,0 +1,313 @@
+﻿body {
+	position: relative;
+	margin: 0;
+	-webkit-text-size-adjust: none;
+	min-height: 416px;
+	background-color: #EAEBEB;
+	font-family: helvetica,sans-serif;
+	background: url("../images/background.png"),url('../images/menutouched.png') no-repeat;
+	-webkit-touch-callout: none;
+}
+.center {
+	margin: auto;
+	display: block;
+}
+img {
+	border: 0;
+}
+a:hover span.arrow {
+	background-position: 0 -13px!important;
+}
+#topbar {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 35px;
+	width: auto;
+	background: url("../images/header.png") repeat;
+	margin-bottom: 0px;
+
+
+}
+#topmenubar {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 43px;
+	width: auto;
+	background: url("../images/header.png") repeat;
+	margin-bottom: 13px;
+}
+#title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 10px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 35px;
+	line-height: 35px;
+	font-weight: bold;
+	color: #FFF;
+	text-shadow: rgba(0,0,0,0.6) 0 -1px 0;
+	font-size: 16pt;
+}
+#content {
+	width: 100%;
+	position: relative;
+	min-height: 250px;
+	margin-top: 10px;
+	height: auto;
+	z-index: 0;
+	overflow: hidden;
+}
+#footer {
+	text-align: center;
+	position: relative;
+	margin: 20px 10px 0;
+	height: auto;
+	width: auto;
+	bottom: 10px;
+}
+#footer a, #footer {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #4C4C4C;
+	text-shadow: #FFF 0 1px 0;
+}
+
+li.menu a:hover span.name, li.menu a:hover span.comment, li.store:hover .starcomment, li.store:hover .name, li.store:hover .comment, body.list li.withimage a:hover .comment {
+	color: #fff;
+}
+li.menu a:hover span.comment {
+	color: #CCF;
+}
+.graytitle {
+	position: relative;
+	font-weight: bold;
+	font-size: 17px;
+	right: 20px;
+	left: 9px;
+	color: #4C4C4C;
+	text-shadow: #FFF 0 1px 0;
+	padding: 1px 0 3px 8px;
+}
+.header {
+	display: block;
+	font-weight: bold;
+	color: rgb(73,102,145);
+	font-size: 12pt;
+	margin-bottom: 6px;
+	line-height: 14pt;
+}
+body.list ul li.title {
+	background: url("../images/listheader.gif") repeat-x;
+	height: 22px!important;
+	width: 100%;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	text-shadow: gray 0 1px 0;
+	line-height: 22px;
+	padding-left: 20px;
+	border-bottom: none!important;
+}
+body.list ul {
+	background-color: #fff;
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+body.list div#content li {
+	height: 40px;
+	border-bottom: 1px solid #e1e1e1;
+	list-style: none;
+}
+body.list {
+	background-color: #fff;
+	background-image: none!important;
+}
+body.list div#footer {
+	margin-top: 24px!important;
+}
+body.list div#content li a {
+	padding: 9px 0 0 20px;
+	font-size: large;
+	font-weight: bold;
+	position: relative;
+	display: block;
+	color: #000;
+	text-decoration: none;
+	height: 32px;
+}
+body.list div#content li a span.name {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 93%;
+	white-space: nowrap;
+	display: block;
+}
+body.list div#content li a:hover {
+	color: #fff;
+}
+body.list div#content li a:hover {
+	background: url("../images/menutouched.png") repeat-x;
+}
+body.list div#content {
+	margin-top: -13px!important;
+}
+#leftnav, #leftbutton {
+	position: absolute;
+	font-size: 12px;
+	left: 9px;
+	top: 7px;
+	font-weight: bold;
+}
+#leftnav, #leftbutton, #rightnav, #rightbutton {
+	z-index: 5000;
+}
+#leftnav a, #rightnav a, #leftbutton a, #rightbutton a {
+	display: block;
+	color: #fff;
+	text-shadow: rgba(0,0,0,0.6) 0 -1px 0;
+	line-height: 30px;
+	height: 30px;
+	text-decoration: none;
+}
+#leftnav img, #rightnav img {
+	margin-top: 4px;
+}
+#leftnav a:first-child {
+	z-index: 2;
+	-webkit-border-image: url("../images/navleft.png") 0 5 0 13;
+	border-width: 0 5px 0 13px;
+	-webkit-border-top-left-radius: 16px;
+	-webkit-border-bottom-left-radius: 16px;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	width: auto;
+}
+#leftnav a {
+	-webkit-border-image: url("../images/navlinkleft.png") 0 5 0 13;
+	z-index: 3;
+	margin-left: -4px;
+	border-width: 0 5px 0 13px;
+	padding-right: 4px;
+	-webkit-border-top-left-radius: 16px;
+	-webkit-border-bottom-left-radius: 16px;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	float: left;
+}
+#rightnav, #rightbutton {
+	position: absolute;
+	font-size: 12px;
+	right: 9px;
+	top: 7px;
+	font-weight: bold;
+}
+#rightnav a {
+	-webkit-border-image: url("../images/navlinkright.png") 0 13 0 5;
+	z-index: 3;
+	margin-right: -4px;
+	border-width: 0 13px 0 5px;
+	padding-left: 4px;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	float: right;
+	-webkit-border-top-right-radius: 16px;
+	-webkit-border-bottom-right-radius: 16px;
+}
+#rightnav a:first-child {
+	z-index: 2;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-image: url("../images/navright.png") 0 13 0 5;
+	border-width: 0 13px 0 5px;
+	-webkit-border-top-right-radius: 16px;
+	-webkit-border-bottom-right-radius: 16px;
+}
+#leftbutton a, #rightbutton a {
+	-webkit-border-image: url("../images/navbutton.png") 0 5 0 5;
+	border-width: 0 5px;
+	-webkit-border-radius: 6px;
+}
+ul li.hidden {
+	display: none;
+}
+ul li.autolisttext {
+	text-align: center;
+}
+
+div#routelist {
+
+
+    height: 56px;
+    float: top;
+    margin-bottom: 0px;
+    background: #EAEBEB;
+}
+
+div#route {
+
+    font-size: 50px;
+    width: 100px;
+    float: left;
+    height: 56px;
+    text-align: right;
+    font-weight: bold;
+    font-family: arial;
+    padding-right: 3px;
+    background: url("../images/header-route.png") repeat ;
+
+    color: #fff;
+}
+
+div#data {
+    font-weight: bold;
+    height: 25px;
+    text-align: right;
+    font-size: 28px;
+    padding-bottom: 3px;
+    margin-bottom:5px;
+
+}
+
+div#businfo {
+
+    font-size: 15px;
+    height: 15px;
+    text-align: right;
+    color: #7f7f7f;
+}
+
+
+
+hr#routesep {
+    margin-bottom: 0px;
+    margin-top: -1px;
+    border-bottom: 0px;
+}
+
+div#nodata {
+    font-weight: bold;
+    height: 25px;
+    text-align: right;
+    position: absolute:
+    top: 40px;
+    font-size: 28px;
+
+}
+
+.longtext {
+    overflow-x: -webkit-marquee;
+
+}
+
+.test {
+    font-size: 4px;
+}

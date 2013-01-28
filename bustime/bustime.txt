@@ -1,0 +1,35 @@
+-*- python -*-
+
+import bustime, urllib, lxml.etree as etree
+baseurl = 'http://trip.osu.edu/bustime/api/v1/'
+apikey =  'uGyaRJ2dAbwTGDbWwPXnYreeR'
+bt = bustime.bustime(apikey=apikey, baseurl=baseurl)
+
+rt = "MC, NE, ER, CLN, CLS"
+params = {"key": apikey, "rt": rt}
+request = "getvehicles"
+bt.getvehicles(rt=rt)
+
+
+busdict = {"apikey": 'uGyaRJ2dAbwTGDbWwPXnYreeR', "url": 'http://trip.osu.edu/bustime/api/v1/'}
+cd ~/projects
+
+data = {"vehicle": 520,
+        "tmstmp" : "blah",
+        "lat" : 512.1234234,
+        "lon" : 8523.234}
+
+
+##### Chicago CTA
+import bustime
+baseurl = 'http://www.ctabustracker.com/bustime/api/v1/'
+apikey = 'CkKhZE9RZBB6qDaHURzBmLi9Q'
+bt = bustime.bustime(apikey=apikey, baseurl=baseurl)
+
+routes = bt.getroutes()
+allstops = bustime.populatestops(bt,routes[:10])
+
+
+bt.getvehicles(rt=152)
+
+bt.getstops(rt=152, dir="East Bound")

@@ -1,0 +1,72 @@
+$def with (stopid, stpnm, busdata)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+<head> 
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" /> 
+<meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" /> 
+<!---<link href="static/themes/red/css/style.css" rel="stylesheet" type="text/css" />--> 
+<link href="/static/css/uncompressed_style.css" rel="stylesheet" type="text/css" /> 
+<!---<script src="static/javascript/functions.js" type="text/javascript"></script>---> 
+<title>$stpnm</title> 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18845525-1']);
+      _gaq.push(['_trackPageview']);
+
+  (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+
+</script>
+</head> 
+ 
+<body class="list" style="background-color: #EAEBEB;"> 
+ 
+<div id="topbar"> 
+  <div id="title">$stpnm</div> 
+</div> 
+ 
+ 
+<div id="topmenubar"> 
+  <div id="leftnav"> 
+    <a href="/"><img alt="home" src="/static/images/home.png" /></a> 
+  </div> 
+  <div id="rightbutton"><a href="$stopid">Refresh</a></div> 
+</div> 
+ 
+<div id="content" style="background-color: #EAEBEB;"> 
+<ul><li style="font-size: 13px;" class="title">Text "osutrip $stopid" to 41411 for arrival times</li>
+</ul> 
+$for bus in busdata:
+    <div id="routelist"> 
+      <div id="route">$bus["rt"]</div>
+
+      $if bus.diff == 0:  
+           <div id="data">Approaching</div> 
+      $else: 
+           <div id="data">$bus.diff Minutes</div> 
+      <div id="businfo">Bus: $bus["vid"]</div> 
+    </div> 
+    <hr id="routesep"/> 
+ 
+ 
+</div> 
+ 
+<div id="footer" style="background-color: #EAEBEB;"> 
+        <!-- please keep this line of text for three reasons: to help us, to thank us and just because it is cool--> 
+        <!-- Not a problem :) You guys made my life life much, much easier!!Patrick --> 
+        <a class="noeffect" href="mailto:shuff.12@osu.edu"><b>Created by Patrick Shuff.12</b></a><br /> 
+ 
+        <a class="noeffect">Powered by</a> 
+        <a class="noeffect" href="http://iwebkit.net">iWebKit</a>, 
+        <a class="noeffect" href="http://python.org">Python, </a>and
+        <a class="noeffect" href="http://webpy.org">web.py</a> 
+</div> 
+ 
+</body> 
+ </html> 

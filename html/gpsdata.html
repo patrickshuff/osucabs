@@ -1,0 +1,9 @@
+$def with (stops)
+<li class="title">Closest bus stops...</li>
+$for stop in stops:
+       <li>
+	 <a href="busstop/$stop[1]">
+	   <span class="name">$stop[2]</span>
+	   <span class="arrow"></span>
+	 </a>
+       </li>

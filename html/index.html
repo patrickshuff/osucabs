@@ -1,0 +1,96 @@
+$def with (TITLE,ROUTES,favs)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="keywords" content="Chicago cta mobile bus tracker bustracker android Transportation authority iphone chi busses busstop stop go-cta go-cta.com go"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
+<link href="static/css/uncompressed_style.css" rel="stylesheet" type="text/css" />
+<link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png" />
+<link rel="favicon" href="/static/images/favicon.ico" />
+<script language="javascript" type="text/javascript">
+
+  function getLocation(){
+     navigator.geolocation.getCurrentPosition(insertStops,errorfunc,{enableHighAccuracy:true,maximumAge:1000});
+  }
+  
+  function insertStops(position){
+    
+  xmlhttp=new XMLHttpRequest();
+  url="gpsdata?lat="+position.coords.latitude+"&lon=" + position.coords.longitude;
+  xmlhttp.open("GET",url,false);
+  xmlhttp.send(null);
+  document.getElementById("gpsdata").innerHTML=xmlhttp.responseText;
+  }
+  function errorfunc(error){
+  //document.getElementById("gpsdata").addClass("hide");
+  }
+
+</script>
+<title>$TITLE</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18845525-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body onload="getLocation()" class="list">
+
+<div id="topbar">
+  <div id="title">$TITLE</div>  
+</div>
+
+<div id="topmenubar">
+  <div id="leftnav">
+    <a href="/"><img alt="home" src="static/images/home.png" /></a>
+  </div>
+  <div id="rightbutton"><a href="">Refresh</a></div>
+</div>
+
+<div id="content">
+  <ul> 
+    <li class="title">Favorite bus stops...</li>
+    $for fav in favs:
+         <li>
+	   <a href="busstop/$fav['stpid']">
+	     <span class="name">$fav['stpnm']</span>
+	     <span class="arrow"></span>
+	   </a>
+	 </li>
+   <div id="gpsdata"></div>
+    <li class="title">Choose stop by route...</li>
+    $for route in ROUTES:
+       <li>
+	 <a href="routelist/$route["rt"]">
+	   <span class="name">$route["rt"] - $route["rtnm"]</span>
+	   <span class="arrow"></span>
+	 </a>
+       </li>
+
+  </ul>
+</div>
+
+<div id="footer">
+        <!-- please keep this line of text for three reasons: to help us, to thank us and just because it is cool-->
+        <a class="noeffect" href="mailto: shuff.12@osu.edu"><b>Created by Patrick Shuff.12</b></a><br />
+
+        <a class="noeffect">Powered by</a>
+        <a class="noeffect" href="http://iwebkit.net">iWebKit</a>, 
+        <a class="noeffect" href="http://python.org">Python, </a>and
+        <a class="noeffect" href="http://webpy.org">web.py</a>
+</div>
+
+</body>
+
+</html>
