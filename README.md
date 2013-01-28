@@ -36,7 +36,8 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
 
 # Configuration (Apply for your API key and update settings.py!)
 
-### You must apply for a developer API key before using
+### You must apply for a developer API key before using this app
+#### Apply for it here: http://trip.osu.edu/bustime/login.jsp
     sudo cp  /webdata/osucabs/sample_settings.py  /webdata/osucabs/settings.py
     sudo vim /webdata/osucabs/settings.py
 # Run it!
@@ -59,7 +60,7 @@ Troubleshooting
 ---------------
 The first place you should probably start (assuming you have apache in installed, and the config in place) is looking at the apache error_log:
 
-sudo less /var/log/httpd/error_log
+    sudo less /var/log/httpd/error_log
 
 ### The bus times on the webpage are way way off?  what's up?
 Well the problem is likely your server is in a different timezone.  Make sure your server is set up to use eastern time zone
