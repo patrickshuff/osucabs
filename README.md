@@ -2,9 +2,11 @@ osucabs
 =======
 Introduction
 ------------
-This site is for the Ohio State Campus Area Bus Service.  
+This project is the code base that has powers the website http://osucabs.com.  This website was born in 2009 as a means to provide quick mobile access for the Campus Area Bus Service on the Ohio State University campus. Since I have since graduated from OSU (and left Ohio), I have little desire or incentive to improve upon the site.  Since the site still has several hundred users per month (Google Analytics), I want to give the code back to the students that use it to improve upon it and make it better!
 
-This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  
+Word of warning: This was one of first big python projects so I'm sure the code is a bit sloppy at times, documented poorly, and has 0% test coverage.  I encourage anyone that want to help out by submitting code cleanup as well as documentation. :)
+
+This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  I have tested deploying to a clean Amazon EC2 Amazon AMI Linux instance several time.  Feel free to get a hold of me if you have any issues!
 
 Installation
 ------------
