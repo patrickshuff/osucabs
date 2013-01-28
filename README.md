@@ -8,8 +8,8 @@ This installation guide is setup up assuming you have a brand new server compati
 
 Installation
 ------------
-## Add the 10gen Mondo DB repo 
-### Copied from http://docs.mongodb.org/manual/tutorial/install-mongodb-on-redhat-centos-or-fedora-linux/
+### Add the 10gen Mondo DB repo 
+#### Copied from http://docs.mongodb.org/manual/tutorial/install-mongodb-on-redhat-centos-or-fedora-linux/
     cat << EOF | sudo tee /etc/yum.repos.d/10gen.repo
     [10gen]
     name=10gen Repository
@@ -53,7 +53,7 @@ Installation
 Troubleshooting
 ---------------
 
-## The times are way way off?  what's up?
+### The times are way way off?  what's up?
 Well the problem is likely your server is in a different timezone.  Make sure your server is set up to use eastern time zone
 
     sudo cp /usr/share/zoneinfo/US/Eastern /etc/localtime
