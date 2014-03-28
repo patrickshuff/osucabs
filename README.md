@@ -2,11 +2,11 @@ osucabs
 =======
 Introduction
 ------------
-This project is the code base that has powers the website http://osucabs.com.  This website was born in 2009 as a means to provide quick mobile access for the Campus Area Bus Service on the Ohio State University campus. Since I have since graduated from OSU (and left Ohio), I have little desire or incentive to improve upon the site.  Since the site still has several hundred users per month (Google Analytics), I want to give the code back to the students that use it to improve upon it and make it better!
+This project is the code base that powers the website http://osucabs.com.  This website was born in 2009 as a means to provide quick mobile access for the Campus Area Bus Service on the Ohio State University campus. Since I have since graduated from OSU (and left Ohio), I have little desire or incentive to improve upon the site.  Since the site still has several hundred users per month (Google Analytics), I want to give the code back to the students that use it to improve upon it and make it better!
 
-Word of warning: This was one of first big python projects so I'm sure the code is a bit sloppy at times, documented poorly, and has 0% test coverage.  I encourage anyone that want to help out by submitting code cleanup as well as documentation. :)
+Word of warning: This was one of my first big python projects so I'm sure the code is a bit sloppy at times, documented poorly, and has 0% test coverage.  I encourage anyone that wants to help out to do so by submitting code cleanup as well as documentation. :)
 
-This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  I have tested deploying to a clean Amazon EC2 Amazon AMI Linux instance several time.  Feel free to get a hold of me if you have any issues!
+This installation guide is setup up assuming you have a brand new server compatible with Redhat Enterprise Linux  (e.g. CentOS, Scientific Linux, Amazon AMI).  I have tested deploying to a clean Amazon EC2 Amazon AMI Linux instance several times.  Feel free to get a hold of me if you have any issues!
 
 Requirements
 ------------
@@ -60,7 +60,7 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
     sudo vim /webdata/osucabs/settings.py
 # Run it!
 
-### Make sure MongoDB is enable on reboot
+### Make sure MongoDB is enabled on reboot
     sudo chkconfig mongod on
     
 ### Start MongoDB
@@ -76,7 +76,7 @@ NOTE: I don't like the fact that we have to install gcc...but it is needed for l
 
 Troubleshooting
 ---------------
-The first place you should probably start (assuming you have apache in installed, and the config in place) is looking at the apache error_log:
+The first place you should probably start (assuming you have apache installed, and the config in place) is looking at the apache error_log:
 
     sudo less /var/log/httpd/error_log
 
