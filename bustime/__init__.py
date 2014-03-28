@@ -10,7 +10,9 @@ class bustime (object):
         self.baseurl = kwargs.get("baseurl", baseurl)
 
     def getvehicles(self, rt='',vid='', **kwargs):
-        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The routes can be either a list of comma-delimeted string"""
+        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The
+        routes can be either a list of comma-delimeted string.
+        """
         params = {"key": self.apikey}
         request = "getvehicles"
         rt = kwargs.get("rt",rt)
@@ -23,7 +25,9 @@ class bustime (object):
         return [a for a in _pulldata(self.baseurl, request, params)]
 
     def getpredictions(self, stpid='', rt='',vid='', top='', **kwargs):
-        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The routes can be either a list of comma-delimeted string"""
+        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The
+        routes can be either a list of comma-delimeted string.
+        """
         params = {"key": self.apikey}
         request = "getpredictions"
         rt = kwargs.get("rt",rt)
@@ -50,7 +54,9 @@ class bustime (object):
                                                     
         
     def getservicebulletins(self, stpid='', rt='',rtdir='', top='', **kwargs):
-        """This modules will get vehicle information by route(rt) or by vehicle id (rtdir).  The routes can be either a list of comma-delimeted string"""
+        """This modules will get vehicle information by route(rt) or by vehicle id (rtdir).  The
+        routes can be either a list of comma-delimeted string.
+        """
         params = {"key": self.apikey}
         request = "getservicebulletins"
         rt = kwargs.get("rt",rt)
@@ -70,7 +76,9 @@ class bustime (object):
         return [a for a in _pulldata(self.baseurl, request, params)]
 
     def getstops(self,rt='',dir='', **kwargs):
-        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The routes can be either a list of comma-delimeted string"""
+        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The
+        routes can be either a list of comma-delimeted string.
+        """
         params = {"key": self.apikey}
         request = "getstops"
         rt = kwargs.get("rt",rt)
@@ -83,7 +91,9 @@ class bustime (object):
         return [a for a in _pulldata(self.baseurl, request, params)]
 
     def getpatterns(self,rt='',pid='', **kwargs):
-        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The routes can be either a list of comma-delimeted string"""
+        """This modules will get vehicle information by route(rt) or by vehicle id (vid).  The
+        routes can be either a list of comma-delimeted string.
+        """
         params = {"key": self.apikey}
         request = "getpatterns"
         rt = kwargs.get("rt",rt)
@@ -98,27 +108,29 @@ class bustime (object):
         return [a for a in _pulldata(self.baseurl, request, params)]
 
     def getroutes(self):
-        """This modules will get route information.  Nothing needs to be passed in"""
+        """This modules will get route information.  Nothing needs to be passed in."""
         params = {"key": self.apikey}
         request = "getroutes"
         return [a for a in _pulldata(self.baseurl, request, params)]
 
     def gettime(self):
-        """This modules will get route information.  Nothing needs to be passed in"""
+        """This modules will get route information.  Nothing needs to be passed in."""
         params = {"key": self.apikey}
         request = "gettime"
         timestring = [a for a in _pulldata(self.baseurl, request, params)][0].tm
         return time.strptime(timestring,"%Y%m%d %H:%M:%S")
 
     def getdirections(self,rt='', **kwargs):
-        """Use the getdirections request to retrieve the set of directions serviced by the specified route."""
+        """Use the getdirections request to retrieve the set of directions serviced by the
+        specified route.
+        """
         params = {"key": self.apikey}
         request = "getdirections"
         params["rt"] = kwargs.get("rt",rt)
         return [a for a in _pulldata(self.baseurl, request, params)]
 
 def _pulldata (baseurl, request, params):
-    """This is a private class to query the server and return a response object"""
+    """This is a private class to query the server and return a response object."""
     try:
         url = "%s%s?%s" % (baseurl, request, urllib.urlencode(params))
         data = urllib.urlopen(url).read()
@@ -151,13 +163,20 @@ class response (dict):
             self.__setitem__(attrib,attribs[attrib])
 
 def populatedirections(bt, routes):
-    """This function is used to add the directions for a list of routes.  The reason I didn't include this in the getroutes method is because it takes some time to poll their api for each route direction"""
+    """This function is used to add the directions for a list of routes.  The reason I didn't
+    include this in the getroutes method is because it takes some time to poll their api for each
+    route direction.
+    """
     map(lambda x: x.__setitem__("directions",[y["dir"] for y in bt.getdirections(rt=x["rt"])]),routes)
     bt.directions = True
     return routes
 
 def populatestops(bt,routes):
-    """This function will populate the stops for a list of routes.  It will add a .stops attribute to ever route which will consist of a tuple with the first item being the Direction and the next will be a list of stops.  This will likely take a lot of time (Approximately one second per stop)"""
+    """This function will populate the stops for a list of routes.  It will add a .stops attribute
+    to ever route which will consist of a tuple with the first item being the Direction and the next
+    will be a list of stops.  This will likely take a lot of time (Approximately one second per
+    stop).
+    """
     populatedirections(bt, routes)
     allstops = []
     for route in routes:
@@ -167,6 +186,3 @@ def populatestops(bt,routes):
             route["stops"].append((direction,stops))
             allstops.extend(stops)
     return allstops
-                            
-                            
-            
