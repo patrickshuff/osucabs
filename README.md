@@ -2,7 +2,7 @@ osucabs
 =======
 Introduction
 ------------
-This project is the code base that powers the website http://osucabs.com.  This website was born in 2009 as a means to provide quick mobile access for the Campus Area Bus Service on the Ohio State University campus. Since I have since graduated from OSU (and left Ohio), I have little desire or incentive to improve upon the site.  Since the site still has several hundred users per month (Google Analytics), I want to give the code back to the students that use it to improve upon it and make it better!
+This project is the code base that powers the website osucabs.  This website was born in 2009 as a means to provide quick mobile access for the Campus Area Bus Service on the Ohio State University campus. Since I have since graduated from OSU (and left Ohio), I have little desire or incentive to improve upon the site.  Since the site still has several hundred users per month (Google Analytics), I want to give the code back to the students that use it to improve upon it and make it better!
 
 Word of warning: This was one of my first big python projects so I'm sure the code is a bit sloppy at times, documented poorly, and has 0% test coverage.  I encourage anyone that wants to help out to do so by submitting code cleanup as well as documentation. :)
 
